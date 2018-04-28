@@ -53,7 +53,7 @@ public class Dodger extends AdvancedRobot {
         
         pos = normalRelativeAngle(e.getBearingRadians() + e.getHeadingRadians() - getRadarHeadingRadians());
         turnGunLeft(pos);
-        fire(3);
+        fire(3); 
         System.out.println("Last energy: " + energy + "\nNow energy: " + e.getEnergy());
         double enDiff = Math.abs(energy - e.getEnergy());
         energy = e.getEnergy();
