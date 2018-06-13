@@ -47,8 +47,8 @@ public class Saitama extends AdvancedRobot {
       double max = 100;
 	 
 	
-	  //Faz um controle da energia que é gasta no que diz 
-	  //respeito à potência do tiro
+	  //Faz um controle da energia que é gasta em cada tiro 
+	  //aumentando ou diminuindo potência de cada disparo
       if(e.getEnergy() < max){
          max = e.getEnergy();
          miraCanhao(e.getBearing(), max, getEnergy());
@@ -60,19 +60,19 @@ public class Saitama extends AdvancedRobot {
          miraCanhao(e.getBearing(), max, getEnergy());
       }
     }
-    //quando o seu robo colide com outro robo
+    //Quando o robô colide com outro
     @Override
     public void onHitRobot(HitRobotEvent e) {
 	   tiroFatal(e.getBearing(), e.getEnergy(), getEnergy());	
 	
     }
-    //Quando seu roboô leva um tiro
+    //Quando o robô é atingido por algum tiro
     @Override
     public void onHitByBullet(HitByBulletEvent e) { 
 	   turnLeft(90);
 	   back(100); 
     }
-    //Fornece as coordenadas para o ajuste do canhão.
+    //Coordenadas para o ajuste do canhão.
 
     /**
      *
@@ -102,7 +102,7 @@ public class Saitama extends AdvancedRobot {
           fire(PontoQuarenta);
        }
    }
-   //É chamado quando o robô bate na parede,
+   //Quando o robô bate na parede,
     @Override
    public void onHitWall(HitWallEvent e) {
       turnLeft(90);
